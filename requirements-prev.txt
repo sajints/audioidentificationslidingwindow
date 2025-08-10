@@ -1,0 +1,15 @@
+certifi==2025.8.3
+fastapi==0.116.1
+faster_whisper==1.2.0
+librosa==0.11.0
+numpy
+openai==1.99.6
+pydub==0.25.1
+scikit_learn==1.7.1
+scipy
+sentence_transformers==5.1.0
+torch==2.3.1
+torchaudio
+uvicorn==0.35.0
+pyannote.audio
+soundfile
