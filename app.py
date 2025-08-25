@@ -49,10 +49,21 @@ async def match_audio(file: UploadFile = File(...), song_id: str = Form(...)):
 
 # Example usage:
 @app.post("/slidingaudiomatch")
-async def match_slidingaudio(file: UploadFile = File(...),file2: UploadFile = File(...), song_id: str = Form(...)):
+async def match_slidingaudio(file: UploadFile = File(...),file2: UploadFile = File(...)): #, song_id: str = Form(...)
     audio_path_1 = os.path.join(UPLOAD_FOLDER, file.filename)
+    print("audio_path_1:", audio_path_1)
+    print("file.filename:", file.filename)
+
     # audio_path_1 = "conversation_full.wav"
     audio_path_2 = os.path.join(UPLOAD_FOLDER, file2.filename)
+
+    # Save the uploaded files
+    with open(audio_path_1, "wb") as buffer:
+        shutil.copyfileobj(file.file, buffer)
+    with open(audio_path_2, "wb") as buffer:
+        shutil.copyfileobj(file2.file, buffer)
+    
+    print("Saved file to:", audio_path_1)
 
     window_size = 3.0  # seconds
     stride = 1.0       # seconds

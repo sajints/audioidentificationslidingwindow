@@ -1,3 +1,11 @@
+# Setup
+
+python -m pip install --upgrade certifi
+
+Download offline models from below link-
+https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/tree/main
+
+
 
 # Encoder
 ## Convert m4a to mp3

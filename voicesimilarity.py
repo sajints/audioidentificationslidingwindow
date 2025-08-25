@@ -31,15 +31,23 @@
 import librosa
 import torch
 import numpy
-from speechbrain.pretrained import EncoderClassifier
+# from speechbrain.pretrained import EncoderClassifier
+from speechbrain.inference import EncoderClassifier
+# speechbrain/
+# classifier = EncoderClassifier.from_hparams(
+#     source="./pretrained_models\EncoderClassifier-8f6f7fdaa9628acf73e21ad1f99d5f83/spkrec-ecapa-voxceleb",
+#     run_opts={"device": "cuda" if torch.cuda.is_available() else "cpu"}
+# )
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 classifier = EncoderClassifier.from_hparams(
-    source="speechbrain/spkrec-ecapa-voxceleb",
-    run_opts={"device": "cuda" if torch.cuda.is_available() else "cpu"}
+    savedir=r"C:\EncoderClassifier",  # local path \spkrec-ecapa-voxceleb
+    source="./",   # dummy local source            #source="speechbrain/spkrec-ecapa-voxceleb", 
+    run_opts={"device": device}
 )
 
-print(torch.__version__)
-print(numpy.__version__)
+# print(torch.__version__)
+# print(numpy.__version__)
 
 def process_audio_to_embedding(audio_path, start_sec, window_size_sec):
     y, sr = librosa.load(audio_path, sr=16000, offset=start_sec, duration=window_size_sec)
