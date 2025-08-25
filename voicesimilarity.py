@@ -29,6 +29,8 @@
 #     return embedding.detach().cpu().numpy()
 
 import librosa
+import shutil
+import os
 import torch
 import numpy
 # from speechbrain.pretrained import EncoderClassifier
@@ -39,13 +41,17 @@ from speechbrain.inference import EncoderClassifier
 #     run_opts={"device": "cuda" if torch.cuda.is_available() else "cpu"}
 # )
 device = "cuda" if torch.cuda.is_available() else "cpu"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
 
+classifierpath =  os.path.join(BASE_DIR ,"pretrained_models\EncoderClassifier")
 classifier = EncoderClassifier.from_hparams(
-    savedir=r"C:\EncoderClassifier",  # local path \spkrec-ecapa-voxceleb
+    savedir=classifierpath,  # local path \spkrec-ecapa-voxceleb
     source="./",   # dummy local source            #source="speechbrain/spkrec-ecapa-voxceleb", 
     run_opts={"device": device}
 )
 
+print("BASE_DIR =", BASE_DIR)
+print("classifierpath", classifierpath)
 # print(torch.__version__)
 # print(numpy.__version__)
 
