@@ -1,0 +1,107 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.sublime-*
+
+# dotenv environment variables file
+.env
+
+audio_files/
+ffmpeg*
+*.mp3
+*.m4a
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Environment variables / local configs
+*.env
+*.env.*
+.envrc
+
+# Logs
+*.log
+
+# Mac / Windows / Linux system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VSCode / PyCharm settings
+.vscode/
+.idea/
+
+# MyPy, Pyre, Pytype, etc.
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+
+# FastAPI / Uvicorn / Gunicorn specific
+*.pid
+*.db
