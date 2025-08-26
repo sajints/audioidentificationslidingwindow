@@ -22,29 +22,29 @@ create_database()
 UPLOAD_FOLDER = "audio_files"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-@app.post("/save")
-async def save_audio(file: UploadFile = File(...), song_id: str = Form(...)):
-    path = os.path.join(UPLOAD_FOLDER, file.filename)
-    with open(path, "wb") as f:
-        shutil.copyfileobj(file.file, f)
+# @app.post("/save")
+# async def save_audio(file: UploadFile = File(...), song_id: str = Form(...)):
+#     path = os.path.join(UPLOAD_FOLDER, file.filename)
+#     with open(path, "wb") as f:
+#         shutil.copyfileobj(file.file, f)
 
 
-    embedding = process_audio_to_embedding(path)
-    #store_embedding(embedding, song_id=song_id)
-    store_embedding(song_id, embedding, db_path="embeddings.db")
-    return {"message": "embedding completed", "embedding": len(embedding)}
+#     embedding = process_audio_to_embedding(path)
+#     #store_embedding(embedding, song_id=song_id)
+#     store_embedding(song_id, embedding, db_path="embeddings.db")
+#     return {"message": "embedding completed", "embedding": len(embedding)}
 
-@app.post("/match")
-async def match_audio(file: UploadFile = File(...), song_id: str = Form(...)):
-    path = os.path.join(UPLOAD_FOLDER, file.filename)
-    with open(path, "wb") as f:
-        shutil.copyfileobj(file.file, f)
+# @app.post("/match")
+# async def match_audio(file: UploadFile = File(...), song_id: str = Form(...)):
+#     path = os.path.join(UPLOAD_FOLDER, file.filename)
+#     with open(path, "wb") as f:
+#         shutil.copyfileobj(file.file, f)
 
-    embedding1 = process_audio_to_embedding(path)
-    embedding2 = load_embeddings(song_id, db_path="embeddings.db")
+#     embedding1 = process_audio_to_embedding(path)
+#     embedding2 = load_embeddings(song_id, db_path="embeddings.db")
 
-    match = compare_audio_embeddings(embedding1, embedding2)
-    return {"match": match}
+#     match = compare_audio_embeddings(embedding1, embedding2)
+#     return {"match": match}
 
 
 # Example usage:

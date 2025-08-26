@@ -43,7 +43,7 @@ from speechbrain.inference import EncoderClassifier
 device = "cuda" if torch.cuda.is_available() else "cpu"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) 
 
-classifierpath =  os.path.join(BASE_DIR ,"pretrained_models\EncoderClassifier")
+classifierpath =  os.path.join(BASE_DIR ,"pretrained_models", "EncoderClassifier")
 classifier = EncoderClassifier.from_hparams(
     savedir=classifierpath,  # local path \spkrec-ecapa-voxceleb
     source="./",   # dummy local source            #source="speechbrain/spkrec-ecapa-voxceleb", 
