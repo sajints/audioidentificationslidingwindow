@@ -41,10 +41,7 @@ coverage.xml
 # dotenv environment variables file
 .env
 
-audio_files/
-ffmpeg*
-*.mp3
-*.m4a
+
 
 # Ignore Python cache
 __pycache__/
